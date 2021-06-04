@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btn_login;
 
 
-    @Override
+    @Override  
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -53,14 +53,14 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "로그인 성공", Toast.LENGTH_SHORT).show();
 
-                        }
-                        else{
-                            Toast.makeText(LoginActivity.this, "로그인 실패", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
+                        }
+                      else{
+                           Toast.makeText(LoginActivity.this, "d", Toast.LENGTH_SHORT).show();
+
                         }
 
                     }
