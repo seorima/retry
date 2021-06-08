@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
         databaseReference = database.getReference("User"); //여기 건들여서..그 앞에 로그인이랑 같이 해야할듯
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //파이어베이ㅅ스 데이터베이스의 데이터를 받아오는곳
                 arrayList.clear();
 
-                for(DataSnapshot snapshot : dataSnapShot.getChildren()){
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     User user = snapshot.getValue(User.class); //만들어뒀던 User객체에 데이터를 담는다.
                     arrayList.add(user); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼준비
 
@@ -61,14 +61,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 Log.e("MainActivity",String.valueOf(databaseError.toException())); //에러문출력
 
             }
         });
 
-        adapter = new CustomAdapter(arrayList.this); //customAdapter에서 너넘겨~~
+        adapter = new CustomAdapter(arrayList,this); //customAdapter에서 너넘겨~~
         recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
     }
 }
