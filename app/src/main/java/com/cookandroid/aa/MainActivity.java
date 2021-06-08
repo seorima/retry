@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //파이어베이ㅅ스 데이터베이스의 데이터를 받아오는곳
+                //파이어베이ㅅ스 데이터베이스의 데이터를 받아오는
                 arrayList.clear();
 
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
