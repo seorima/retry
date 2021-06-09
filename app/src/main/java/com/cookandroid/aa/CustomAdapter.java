@@ -62,8 +62,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
             this.iv_profile = itemView.findViewById(R.id.id_profile);
             this.tv_id = itemView.findViewById(R.id.tv_id);
-            this.tv_pw = itemView.findViewById(R.id.tv_pw);
-            this.tv_userName = itemView.findViewById(R.id.tv_userName);
+           // this.tv_pw = itemView.findViewById(R.id.tv_pw);
+          //  this.tv_userName = itemView.findViewById(R.id.tv_userName);
 
         }
     }

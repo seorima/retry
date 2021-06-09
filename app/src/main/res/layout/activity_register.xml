@@ -4,27 +4,104 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        />
+    <TextView
 
-    <EditText
-        android:id="@+id/et_pwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-         />
+        android:textSize="75dp"
+        android:text="BLIND"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"/>
 
-    <Button
-        android:id="@+id/btn_register"
+    <TextView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="가입완료"
-        />
+        android:layout_gravity="center"
+        android:text="회원가입 중입니다"
+        android:textSize="20dp" />
+
+    ///////////////////
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="E-MAIL"/>
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PW"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            >
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="가입완료"
+
+                android:background="#FFDF24"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
 
 </LinearLayout>
