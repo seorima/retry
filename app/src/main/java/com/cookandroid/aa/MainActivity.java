@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<User> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-
+    private Button btn_add;//
 //
 
     @Override
@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         arrayList = new ArrayList<>();
+
+
+        btn_add = findViewById(R.id.btn_add);//
 
         database = FirebaseDatabase.getInstance();
 
@@ -70,5 +73,22 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CustomAdapter(arrayList,this); //customAdapter에서 너넘겨~~
         recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
+
+
+        Button btn_register = findViewById(R.id.btn_register);
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ControlActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
+
+
+
+
 }
