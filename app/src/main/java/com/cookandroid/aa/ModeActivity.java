@@ -20,8 +20,8 @@ public class ModeActivity extends AppCompatActivity {
     private Button btn_mode_add, btn_mode_modify, btn_mode_delete;
     private Button btn_check_mode, btn_cancel_mode;
 
-    GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
-    recycle_mode.setLayoutManager(gridLayoutManager);
+//    GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+//    recycle_mode.setLayoutManager(gridLayoutManager);
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
