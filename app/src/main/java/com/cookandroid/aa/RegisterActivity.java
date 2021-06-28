@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 mFirebaseAuth.createUserWithEmailAndPassword(strEmail,strPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete(Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
                             FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();

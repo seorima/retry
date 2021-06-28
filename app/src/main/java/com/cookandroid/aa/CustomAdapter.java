@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+//import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -23,9 +23,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         this.context = context;
     }
 
-    @NonNull
     @Override
-    public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item,parent,false);
         CustomViewHolder holder = new CustomViewHolder(view);
@@ -37,7 +36,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+    public void onBindViewHolder(CustomViewHolder holder, int position) {
       //  Glide.with(holder.itemView).load(arrayList.get(position).getProfile()).into(holder.iv_profile);
         holder.tv_id.setText(arrayList.get(position).getId());
         holder.tv_pw.setText(arrayList.get(position).getPw());
@@ -57,7 +56,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
 
 
-        public CustomViewHolder(@NonNull View itemView) {
+        public CustomViewHolder(View itemView) {
             super(itemView);
 
             this.iv_profile = itemView.findViewById(R.id.id_profile);
