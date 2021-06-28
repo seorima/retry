@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
 
 
@@ -51,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
              mFirebaseAuth.signInWithEmailAndPassword(strEmail,strPwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
+                public void onComplete(Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
