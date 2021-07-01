@@ -1,5 +1,6 @@
 package com.cookandroid.aa;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,18 +11,23 @@ import android.widget.TimePicker;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ModeActivity extends AppCompatActivity {
 
-    private ListView list_mode;
+    private RecyclerView recycle_mode;
     private Button btn_mode_add, btn_mode_modify, btn_mode_delete;
     private Button btn_check_mode, btn_cancel_mode;
+
+//    GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+//    recycle_mode.setLayoutManager(gridLayoutManager);
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mode);
 
-        list_mode = findViewById(R.id.list_mode);
+        recycle_mode = findViewById(R.id.recycle_mode);
 
         btn_mode_add = findViewById(R.id.btn_mode_add);
         btn_mode_modify = findViewById(R.id.btn_mode_modify);
@@ -46,4 +52,9 @@ public class ModeActivity extends AppCompatActivity {
             }
         });
     }
+
+//    public GridLayoutManager(Context context, int spanCount){
+//        super(context);
+//        this.setSpanCount(spanCount);
+//    }
 }
