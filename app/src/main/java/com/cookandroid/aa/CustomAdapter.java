@@ -16,6 +16,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
 
     private ArrayList<User> arrayList;
+
     private Context context;
 
     public CustomAdapter(ArrayList<User> arrayList, Context context) {
