@@ -46,13 +46,22 @@ public class ModeAdapter extends RecyclerView.Adapter<ModeAdapter.ModeViewHolder
         // 모드 이름 삽입
         holder.name_mode.setText(arrayList.get(position).getName_mode());
         // 블라인드 높이 삽 입
-        holder.blind_height_mode.setText(arrayList.get(position).getBlind_height_mode());
+        holder.blind_height_mode.setText(String.valueOf(arrayList.get(position).getBlind_height_mode()));
     }
 
     @Override
     public int getItemCount() {
         // 삼항 연산자
         return (arrayList != null ? arrayList.size() : 0);
+    }
+
+    public void remove_mode(int position){
+        try {
+            arrayList.remove(position);
+            notifyItemRemoved(position); // 리스트뷰 지운 후 새로고침
+        } catch (IndexOutOfBoundsException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public class ModeViewHolder extends RecyclerView.ViewHolder {

@@ -11,15 +11,15 @@
         android:theme="@style/Theme.Aa">
 
 
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".ControlActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".ControlActivity"/>
         <activity android:name=".LightControlActivity"/>
         <activity android:name=".AlarmActivity"/>
         <activity android:name=".ModeActivity"/>
