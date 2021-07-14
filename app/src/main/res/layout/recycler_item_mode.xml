@@ -28,8 +28,16 @@
                 android:text="모드 이름"
                 android:layout_margin="5dp" />
 
+            <TextView
+                android:id="@+id/blind_height_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="블라인드 높이"
+                android:layout_margin="5dp" />
+
         </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

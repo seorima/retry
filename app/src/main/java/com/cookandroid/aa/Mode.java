@@ -1,10 +1,11 @@
 package com.cookandroid.aa;
 
 public class Mode {
-
     private String profile;
     private String name_mode;
     private String blind_height_mode;
+
+    public Mode(){}
 
     public String getProfile() {
         return profile;
@@ -29,7 +30,4 @@ public class Mode {
     public void setBlind_height_mode(String blind_height_mode) {
         this.blind_height_mode = blind_height_mode;
     }
-
-    public Mode(){}
-
 }
