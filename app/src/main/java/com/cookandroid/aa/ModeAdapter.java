@@ -55,6 +55,7 @@ public class ModeAdapter extends RecyclerView.Adapter<ModeAdapter.ModeViewHolder
         return (arrayList != null ? arrayList.size() : 0);
     }
 
+    /* long click 하면 지울 수 있도록 하는 함수
     public void remove_mode(int position){
         try {
             arrayList.remove(position);
@@ -63,6 +64,7 @@ public class ModeAdapter extends RecyclerView.Adapter<ModeAdapter.ModeViewHolder
             ex.printStackTrace();
         }
     }
+     */
 
     public class ModeViewHolder extends RecyclerView.ViewHolder {
         ImageView img_mode;
