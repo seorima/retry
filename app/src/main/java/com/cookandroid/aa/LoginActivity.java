@@ -37,10 +37,10 @@ public class LoginActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("aa");
 
-        mEtEmail = findViewById(R.id.et_email);
-        mEtPwd = findViewById(R.id.et_pwd);
+        mEtEmail = findViewById(R.id.et_email_blind);
+        mEtPwd = findViewById(R.id.et_pwd_blind);
 
-        btn_login = findViewById(R.id.btn_login);
+        btn_login = findViewById(R.id.btn_login_blind);
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        Button btn_register = findViewById(R.id.btn_register);
+        Button btn_register = findViewById(R.id.btn_register_blind);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

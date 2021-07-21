@@ -44,6 +44,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         holder.tv_userName.setText(arrayList.get(position).getUserName());
     } //사진 받아오는 거임...서버로부터 사진을 받아온다네요
 
+
     @Override
     public int getItemCount() {
         return (arrayList!=null ? arrayList.size() : 0); //참이면 왼쪾 거짓이면 0

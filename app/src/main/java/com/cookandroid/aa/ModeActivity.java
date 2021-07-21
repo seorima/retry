@@ -84,6 +84,13 @@ public class ModeActivity extends AppCompatActivity {
         btn_check_mode = findViewById(R.id.btn_check_mode);
         btn_cancel_mode =findViewById(R.id.btn_cancel_mode);
 
+        btn_mode_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Mode mode = new Mode(R.drawable.)
+            }
+        });
+
         btn_mode_delete.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view) {

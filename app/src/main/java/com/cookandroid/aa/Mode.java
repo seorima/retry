@@ -7,6 +7,12 @@ public class Mode {
 
     public Mode(){}
 
+    public Mode(String profile, String name_mode, int blind_height_mode) {
+        this.profile = profile;
+        this.name_mode = name_mode;
+        this.blind_height_mode = blind_height_mode;
+    }
+
     public String getProfile() {
         return profile;
     }
