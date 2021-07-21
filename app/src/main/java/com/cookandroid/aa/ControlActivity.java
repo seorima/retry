@@ -13,6 +13,7 @@ public class ControlActivity extends AppCompatActivity {
     private ImageButton ibtn_blind_up, ibtn_blind_stop, ibtn_blind_down;
     private Button btn_light_control, btn_alarm, btn_mode;
 
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
@@ -24,6 +25,13 @@ public class ControlActivity extends AppCompatActivity {
         btn_alarm = findViewById(R.id.btn_alarm);
         btn_mode = findViewById(R.id.btn_mode);
 
+
+        ibtn_blind_up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         btn_light_control.setOnClickListener(new View.OnClickListener() {
             @Override
