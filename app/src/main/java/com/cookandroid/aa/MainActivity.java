@@ -28,10 +28,9 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<User> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-    private Button btn_add;//
-//
-/*
-    @Override
+    private Button btn_add;
+
+/*    @Override
   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
 
 
-        Button btn_register = findViewById(R.id.btn_register);
+        Button btn_register = findViewById(R.id.btn_register_blind);
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
 */
+
 
 }
