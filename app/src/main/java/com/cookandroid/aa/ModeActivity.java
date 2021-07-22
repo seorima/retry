@@ -87,7 +87,7 @@ public class ModeActivity extends AppCompatActivity {
         btn_mode_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Mode mode = new Mode(R.drawable.)
+//                Mode mode = new Mode(R.drawable.)
             }
         });
 
