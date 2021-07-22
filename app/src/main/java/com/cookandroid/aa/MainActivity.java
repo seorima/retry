@@ -1,93 +1,59 @@
 package com.cookandroid.aa;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+    public class MainActivity extends AppCompatActivity {
 
-import java.util.ArrayList;
+        Button button;
+        EditText editName;
+        EditText editDate;
+        EditText editNumber;
+        TextView textNum;
 
-public class MainActivity extends AppCompatActivity {
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<User> arrayList;
-    private FirebaseDatabase database;
-    private DatabaseReference databaseReference;
-    private Button btn_add;
+            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+            LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+            recyclerView.setLayoutManager(layoutManager);
 
-/*    @Override
-  protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            final PersonAdapter adapter = new PersonAdapter();
+            recyclerView.setAdapter(adapter);
 
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        arrayList = new ArrayList<>();
+            editName = findViewById(R.id.editName);
+            editDate = findViewById(R.id.editDate);
+            editNumber = findViewById(R.id.editNumber);
+            textNum = findViewById(R.id.textNum);
 
 
-        btn_add = findViewById(R.id.btn_add);//
 
-        database = FirebaseDatabase.getInstance();
+            button = findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String name = editName.getText().toString();
+                    String date = editDate.getText().toString();
+                    String number = editNumber.getText().toString();
 
-        databaseReference = database.getReference("User"); //여기 건들여서..그 앞에 로그인이랑 같이 해야할듯
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //파이어베이ㅅ스 데이터베이스의 데이터를 받아오는
-                arrayList.clear();
-
-                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    User user = snapshot.getValue(User.class); //만들어뒀던 User객체에 데이터를 담는다.
-                    arrayList.add(user); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼준비
-
-
+                    adapter.addItem(new Person(name,date,number));
+                    adapter.notifyDataSetChanged();
+                    textNum.setText(adapter.getItemCount() + "명");
                 }
-                adapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                Log.e("MainActivity",String.valueOf(databaseError.toException())); //에러문출력
-
-            }
-        });
-
-        adapter = new CustomAdapter(arrayList,this); //customAdapter에서 너넘겨~~
-        recyclerView.setAdapter(adapter); //리사이클러뷰에 어댑터 연결
-
-
-        Button btn_register = findViewById(R.id.btn_register_blind);
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ControlActivity.class);
-                startActivity(intent);
-            }
-        });
+            });
+        }
 
     }
 
 
 
-*/
-
-
-}
