@@ -4,7 +4,7 @@ public class UserAccount {
 
     private String emailId;
     private String password;
-    private String idToken;
+    public String idToken;
 
     public UserAccount(){}
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,19 @@ import android.widget.TextView;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
+            button = findViewById(R.id.btn_add_blind);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(MainActivity.this, BlindActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+            });
+
+/*
             RecyclerView recyclerView = findViewById(R.id.recyclerView);
             LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
             recyclerView.setLayoutManager(layoutManager);
@@ -50,7 +64,7 @@ import android.widget.TextView;
                     adapter.notifyDataSetChanged();
                     textNum.setText(adapter.getItemCount() + "명");
                 }
-            });
+            }); */
         }
 
     }

@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                             account.setEmailId(firebaseUser.getEmail());
                             account.setPassword(strPwd);
 
-                            mDatabaseRef.child("userAccount").child(firebaseUser.getUid()).setValue(account);
+                            mDatabaseRef.child(firebaseUser.getUid()).setValue(account);
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
                             Toast.makeText(RegisterActivity.this, "회원가입 성공", Toast.LENGTH_SHORT).show();
