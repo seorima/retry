@@ -44,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String strEmail = mEtEmail.getText().toString();
                 String strPwd = mEtPwd.getText().toString();
 
+
                 mFirebaseAuth.createUserWithEmailAndPassword(strEmail,strPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(Task<AuthResult> task) {
@@ -51,9 +52,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                             FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
                             UserAccount account = new UserAccount();
-                            account.setidToken(firebaseUser.getUid());
-                            account.setEmailId(firebaseUser.getEmail());
-                            account.setPassword(strPwd);
+                            //account.setidToken(firebaseUser.getUid()); //getuid고유값
+                            account.setEmailId(strEmail); //firebase에 emailID 저장
+                            account.setPassword(strPwd); // firebase에 PW 저장
 
                             mDatabaseRef.child(firebaseUser.getUid()).setValue(account);
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);

@@ -25,7 +25,7 @@ public class BlindActivity extends AppCompatActivity {
     EditText et_blind_name,et_blind_place;
     Button btn_save_blind;
 
-    private DatabaseReference mDatabase;
+    private DatabaseReference mDatabaseRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,61 +33,87 @@ public class BlindActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blind);
 
         mFirebaseAuth = FirebaseAuth.getInstance(); //추가
-
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
         et_blind_name = findViewById(R.id.et_blind_name);
         et_blind_place = findViewById(R.id.et_blind_place);
         btn_save_blind = findViewById(R.id.btn_save_blind);
 
-        //firebase 정의
-        mDatabase = FirebaseDatabase.getInstance().getReference();//경로
+
+
+
 
     //    readUser();
 
         btn_save_blind.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
+
+                UserBlind userBlind = new UserBlind();
+
                 String getblindName = et_blind_name.getText().toString();
                 String getplace = et_blind_place.getText().toString();
-                //hashmap 만들기
-                HashMap result = new HashMap<>();
-                result.put("name", getblindName); ///////여기 수정해라
-                result.put("place", getplace);  ///////여기 수정해라
+
+                userBlind.setBlindName(getblindName);
+                userBlind.setBlindPlace(getplace);
 
 
                 FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
-                UserAccount account = new UserAccount();
-                account.setidToken(firebaseUser.getUid());
+
+             //  writeNewUser(firebaseUser.getUid(),getblindName,getplace);   //idtoken값 받아와야됨
 
 
-                writeNewUser(firebaseUser.getUid(),getblindName,getplace);   //idtoken값 받아와야됨
+                mDatabaseRef.child("aa").child(firebaseUser.getUid()).child(getblindName).setValue(userBlind)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                // Write was successful!
+                                Toast.makeText(BlindActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(BlindActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                // Write failed
+                                Toast.makeText(BlindActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
 
             }
         });
     }
 
-    private void writeNewUser(String userId, String name, String place) {
-        User user = new User(name, place);
+    /* private void writeNewUser(String userId, String name, String place) {
 
-        mDatabase.child("aa").child(userId).setValue(user)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        // Write was successful!
-                        Toast.makeText(BlindActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
+         UserAccount account = new UserAccount();
+         UserBlind userBlind = new UserBlind();
 
-                        Intent intent = new Intent(BlindActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Write failed
-                        Toast.makeText(BlindActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                });
 
-    }
+         mDatabaseRef.child("aa").child(userId).child("blind2").setValue(userBlind)
+                 .addOnSuccessListener(new OnSuccessListener<Void>() {
+                     @Override
+                     public void onSuccess(Void aVoid) {
+                         // Write was successful!
+                         Toast.makeText(BlindActivity.this, "저장을 완료했습니다.", Toast.LENGTH_SHORT).show();
+
+                         Intent intent = new Intent(BlindActivity.this, MainActivity.class);
+                         startActivity(intent);
+                         finish();
+                     }
+                 })
+                 .addOnFailureListener(new OnFailureListener() {
+                     @Override
+                     public void onFailure(@NonNull Exception e) {
+                         // Write failed
+                         Toast.makeText(BlindActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
+                     }
+                 });
+    }*/
 }
