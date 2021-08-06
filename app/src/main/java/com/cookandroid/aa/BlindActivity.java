@@ -56,8 +56,10 @@ public class BlindActivity extends AppCompatActivity {
                 String getblindName = et_blind_name.getText().toString();
                 String getplace = et_blind_place.getText().toString();
 
+
                 userBlind.setBlindName(getblindName);
                 userBlind.setBlindPlace(getplace);
+              // userBlind.setAlarm_day("0");
 
 
                 FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();

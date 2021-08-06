@@ -20,10 +20,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     private ArrayList<UserBlind> arrayList;
     private Context context;
 
-    public CustomAdapter(ArrayList<UserBlind> arrayList, Context context) {
+   /* public CustomAdapter(ArrayList<UserBlind> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
-    }
+    }*/ ///여기 context 때문에 안불러와지는거인듯..
+
+    public CustomAdapter(ArrayList<UserBlind> arrayList, MainActivity mainActivity) {
+        this.arrayList = arrayList;
+        this.context = context;
+    } //우선 오류없게
 
     @NonNull
 

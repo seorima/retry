@@ -5,11 +5,47 @@ public class UserBlind {
     public String blindName;
     public String blindPlace;
     public String blindToken;
+  /*  public String Alarm_day;
+    public String Alarm_height;
+    public String Alarm_state;
+    public String Alarm_time;*/
 
     public UserBlind() {
 
     }
+/*
+    public String getAlarm_day() {
+        return Alarm_day;
+    }
 
+    public void setAlarm_day(String alarm_day) {
+        Alarm_day = alarm_day;
+    }
+
+    public String getAlarm_height() {
+        return Alarm_height;
+    }
+
+    public void setAlarm_height(String alarm_height) {
+        Alarm_height = alarm_height;
+    }
+
+    public String getAlarm_state() {
+        return Alarm_state;
+    }
+
+    public void setAlarm_state(String alarm_state) {
+        Alarm_state = alarm_state;
+    }
+
+    public String getAlarm_time() {
+        return Alarm_time;
+    }
+
+    public void setAlarm_time(String alarm_time) {
+        Alarm_time = alarm_time;
+    }
+*/
     public String getBlindName() {
         return blindName;
     }
