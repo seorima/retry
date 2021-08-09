@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
             recyclerView = findViewById(R.id.recyclerView); // 아디 연결
             recyclerView.setHasFixedSize(true); // 리사이클러뷰 기존성능 강화
             layoutManager = new LinearLayoutManager(this);
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            adapter = new CustomAdapter(arrayList, this);
+            adapter = new CustomAdapter(arrayList);
             recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 
             button = findViewById(R.id.btn_add_blind);
