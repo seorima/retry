@@ -46,7 +46,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
 
         holder.blind_name.setText(arrayList.get(position).getBlindName());
-        holder.blind_place.setText(String.valueOf(arrayList.get(position).getBlindPlace()));
+        holder.blind_place.setText(arrayList.get(position).getBlindPlace());
 
     }
 

@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         private RecyclerView.LayoutManager layoutManager;
         private ArrayList<UserBlind> arrayList;
         private FirebaseDatabase database;
-        private DatabaseReference databaseReference;
+        private DatabaseReference mDatabaseRef;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
             arrayList = new ArrayList<>(); // UserBlind 객체를 담을 어레이 리스트 (어댑터쪽으로)
 
             database = FirebaseDatabase.getInstance(); // 파이어베이스 데이터베이스 연동
+            mDatabaseRef = FirebaseDatabase.getInstance().getReference();
+           // databaseReference = database.getReference("aa"); // DB 테이블 연결
 
-            databaseReference = database.getReference("aa"); // DB 테이블 연결
-
-            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     // 파이어베이스 데이터베이스의 데이터를 받아오는 곳
