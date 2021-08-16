@@ -20,17 +20,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     private ArrayList<UserBlind> arrayList;
     private Context context;
 
-  /*  public CustomAdapter(ArrayList<UserBlind> arrayList, Context context) {
+  /*  public CustomAdapter(ArrayList<UserBlind> arrayList, MainActivity context) {
         this.arrayList = arrayList;
-        this.context = context;
     }*/
 
-    public CustomAdapter(ArrayList<UserBlind> arrayList) {
-        this.arrayList = arrayList;
-    }
 
-    public CustomAdapter(ArrayList<UserBlind> arrayList, MainActivity mainActivity) {
-
+    public CustomAdapter(ArrayList<UserBlind> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }

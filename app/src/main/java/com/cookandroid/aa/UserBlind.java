@@ -2,7 +2,7 @@ package com.cookandroid.aa;
 
 public class UserBlind {
 
-    private String profile;
+    public String profile;
     public String blindName;
     public String blindPlace;
     public String blindToken;
@@ -15,6 +15,7 @@ public class UserBlind {
 
     }
 
+
     public String getProfile() {
         return profile;
     }
@@ -22,7 +23,6 @@ public class UserBlind {
     public void setProfile(String profile) {
         this.profile = profile;
     }
-
     /*
         public String getAlarm_day() {
             return Alarm_day;

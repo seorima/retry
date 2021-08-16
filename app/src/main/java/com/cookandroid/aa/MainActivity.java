@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
+            UserBlind userBlind = new UserBlind();
+
             recyclerView = findViewById(R.id.recyclerView); // 아디 연결
             recyclerView.setHasFixedSize(true); // 리사이클러뷰 기존성능 강화
             layoutManager = new LinearLayoutManager(this);
@@ -50,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
             arrayList = new ArrayList<>(); // UserBlind 객체를 담을 어레이 리스트 (어댑터쪽으로)
 
             database = FirebaseDatabase.getInstance(); // 파이어베이스 데이터베이스 연동
-      mDatabaseRef = database.getReference("aa"); // DB 테이블 연결
+            mDatabaseRef = database.getReference(); // DB 테이블 연결
+
+        //    FirebaseUser firebaseUser = database.getCurrentUser();
 
 
             mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
