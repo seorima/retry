@@ -20,17 +20,21 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     private ArrayList<UserBlind> arrayList;
     private Context context;
 
-
-      /*  public CustomAdapter(ArrayList<UserBlind> arrayList, MainActivity mainActivity) {
-          this.arrayList = arrayList;
-          this.context = context;
-      } */
-
-    public CustomAdapter(ArrayList<UserBlind> arrayList, Context context) {
+  /*  public CustomAdapter(ArrayList<UserBlind> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
+    }*/
 
+    public CustomAdapter(ArrayList<UserBlind> arrayList) {
+        this.arrayList = arrayList;
     }
+
+    public CustomAdapter(ArrayList<UserBlind> arrayList, MainActivity mainActivity) {
+
+        this.arrayList = arrayList;
+        this.context = context;
+    }
+
     @NonNull
 
     @Override
@@ -43,6 +47,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+        Glide.with(holder.itemView)
+                .load(arrayList.get(position).getProfile())
+                .into(holder.iv_profile);
 
         holder.blind_name.setText(arrayList.get(position).getBlindName());
         holder.blind_place.setText(arrayList.get(position).getBlindPlace());
@@ -55,11 +62,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
+        ImageView iv_profile;
         TextView blind_name;
         TextView blind_place;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
+            this.iv_profile = itemView.findViewById(R.id.iv_profile);
 
             this.blind_name = itemView.findViewById(R.id.blind_name);
             this.blind_place = itemView.findViewById(R.id.blind_place);

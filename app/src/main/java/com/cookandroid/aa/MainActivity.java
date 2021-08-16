@@ -25,6 +25,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
         Button button;
+    Button button_light;//light임시
         EditText editName;
         EditText editDate;
         EditText editNumber;
@@ -49,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
             arrayList = new ArrayList<>(); // UserBlind 객체를 담을 어레이 리스트 (어댑터쪽으로)
 
             database = FirebaseDatabase.getInstance(); // 파이어베이스 데이터베이스 연동
-      //      mDatabaseRef = database.getReference("aa"); // DB 테이블 연결
-            mDatabaseRef = database.getReference();
+      mDatabaseRef = database.getReference("aa"); // DB 테이블 연결
+
 
             mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 
             button = findViewById(R.id.btn_add_blind);
+
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -85,6 +87,19 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+
+            button_light = findViewById(R.id.btn_add_light);
+            button_light.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Intent intent = new Intent(MainActivity.this, LightControlActivity.class);
+                    startActivity(intent);
+                    finish();
+
+                }
+            });
+
 
 /*
             RecyclerView recyclerView = findViewById(R.id.recyclerView);
