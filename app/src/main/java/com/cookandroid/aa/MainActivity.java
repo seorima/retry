@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button button;
     Button button_light;//light임시
+    Button button_control;//control임시
+    Button button_alarm;//alarm임시
         EditText editName;
         EditText editDate;
         EditText editNumber;
@@ -49,11 +51,9 @@ public class MainActivity extends AppCompatActivity {
             recyclerView.setLayoutManager(layoutManager);
             arrayList = new ArrayList<>(); // UserBlind 객체를 담을 어레이 리스트 (어댑터쪽으로)
 
-            database = FirebaseDatabase.getInstance(); // 파이어베이스 데이터베이스 연동
+            mDatabaseRef = FirebaseDatabase.getInstance().getReference(); // 파이어베이스 데이터베이스 연동
 
-
-
-            mDatabaseRef = database.getReference("aa").child(firebaseUser.getUid()).child(getblindName).setValue(userBlind); // DB 테이블 연결  /////////////여기 토큰 값이랑 blind이름 가져와서 길게 빼야하지않나..
+         //   mDatabaseRef = database.getReference("aa").child("b9q0aNXVhBdsqtkzwLk3NSC0sb53").child("blind1"); // DB 테이블 연결  /////////////여기 토큰 값이랑 blind이름 가져와서 길게 빼야하지않나..
 
 
             mDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
                     // 디비를 가져오던중 에러 발생 시
-                 //   Log.e("MainActivity", String.valueOf(databaseError.toException())); // 에러문 출력
+               Log.e("MainActivity", String.valueOf(databaseError.toException())); // 에러문 출력
                 }
             });
 
-            adapter = new CustomAdapter(arrayList,this);
+            adapter = new CustomAdapter(arrayList);
             recyclerView.setAdapter(adapter); // 리사이클러뷰에 어댑터 연결
 
             button = findViewById(R.id.btn_add_blind);
@@ -91,12 +91,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            button_light = findViewById(R.id.btn_add_light);
-            button_light.setOnClickListener(new View.OnClickListener() {
+            button_control = findViewById(R.id.btn_add_control);
+            button_control.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    Intent intent = new Intent(MainActivity.this, LightControlActivity.class);
+                    Intent intent = new Intent(MainActivity.this, ControlActivity.class);
                     startActivity(intent);
                     finish();
 

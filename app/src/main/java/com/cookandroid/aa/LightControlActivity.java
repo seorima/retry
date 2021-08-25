@@ -56,7 +56,8 @@ public class LightControlActivity extends AppCompatActivity {
                 //current_lux는 라즈베리에서 받아와야됨
 
                 FirebaseUser firebaseUser = mFirebaseAuth.getCurrentUser();
-                mDatabaseRef.child("aa").child(firebaseUser.getUid()).child("Light").setValue(usercontrol)
+             //   mDatabaseRef.child("aa").child(firebaseUser.getUid()).child("Light").setValue(usercontrol)
+                mDatabaseRef.child("aa").child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Light").setValue(usercontrol)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {

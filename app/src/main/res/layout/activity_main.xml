@@ -36,11 +36,12 @@ tools:context=".MainActivity">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.897" />
 
+
     <Button
-        android:id="@+id/btn_add_light"
+        android:id="@+id/btn_add_control"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="light임시"
+        android:text="control임시"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
