@@ -2,19 +2,15 @@ package com.cookandroid.aa;
 
 public class UserBlind {
 
-//    public String profile;
+
     public String blindName;
     public String blindPlace;
     public String blindToken;
-  /*  public String Alarm_day;
-    public String Alarm_height;
-    public String Alarm_state;
-    public String Alarm_time;*/
+
 
     public UserBlind() {
 
     }
-
 
     public String getBlindName() {
         return blindName;
@@ -42,7 +38,7 @@ public class UserBlind {
 
     @Override
     public String toString() {
-        return "Blind{" +
+       return "Blind{" +
                 "blindName='" + blindName + '\'' +
                 ", place='" + blindPlace + '\'' +
                 '}';

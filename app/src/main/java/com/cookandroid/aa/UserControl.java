@@ -2,22 +2,15 @@ package com.cookandroid.aa;
 
 public class UserControl {
 
-    public String userlight;
+    public String blind_control;
+    public UserControl(String blind_control) {
 
-    public UserControl() {
+    }
+    public String getBlind_control() {
+        return blind_control;
     }
 
-    public String getUserlight() {
-        return userlight;
-    }
-
-    public void setUserlight(String userlight) {
-        this.userlight = userlight;
-    }
-
-    public String toString() {
-        return "Light{" +
-                "set_lux='" + userlight + '\'' +
-                '}';
+    public void setBlind_control(String blind_control) {
+        this.blind_control = blind_control;
     }
 }

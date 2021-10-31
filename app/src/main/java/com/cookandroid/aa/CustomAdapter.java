@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
 
-    private ArrayList<User> arrayList;
+    private ArrayList<UserBlind> arrayList;
 
 
 
@@ -27,7 +27,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
 
 
-    public CustomAdapter(ArrayList<User> arrayList) {
+    public CustomAdapter(ArrayList<UserBlind> arrayList) {
         this.arrayList = arrayList;
     }
 
@@ -43,8 +43,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     @Override
     public void onBindViewHolder(@NonNull CustomAdapter.CustomViewHolder holder, int position) {
-        holder.blind_name.setText(arrayList.get(position).getUserblindName());
-        holder.blind_place.setText(arrayList.get(position).getUserblindPlace());
+        holder.blind_name.setText(arrayList.get(position).getBlindName());
+        holder.blind_place.setText(arrayList.get(position).getBlindPlace());
     }
 
     @Override

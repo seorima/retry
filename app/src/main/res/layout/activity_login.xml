@@ -82,6 +82,8 @@
         android:background="#FFDF24"
         android:layout_marginRight="40dp"
         />
+
+
     <Button
         android:id="@+id/btn_register_blind"
         android:layout_width="wrap_content"
