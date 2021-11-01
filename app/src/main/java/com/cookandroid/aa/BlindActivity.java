@@ -71,7 +71,7 @@ public class BlindActivity extends AppCompatActivity {
                 mDatabaseRef.child("aa").child(firebaseUser.getUid()).child(getblindName).setValue(userControl);*/
 
 
-                mDatabaseRef.child("aa").child(firebaseUser.getUid()).child(getblindName).setValue(userBlind)
+                mDatabaseRef.child("aa").child(firebaseUser.getUid()).child(getblindName).setValue(userBlind) //child(getblindName)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -81,7 +81,7 @@ public class BlindActivity extends AppCompatActivity {
 
 
 
-                                Intent intent = new Intent(BlindActivity.this, MainActivity.class);
+                                Intent intent = new Intent(BlindActivity.this, ControlActivity.class);
                                 startActivity(intent);
                                 finish();
                             }

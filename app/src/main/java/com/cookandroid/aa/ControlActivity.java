@@ -17,7 +17,7 @@ public class ControlActivity extends AppCompatActivity {
     DatabaseReference myRef;
 
     private ImageButton ibtn_blind_up, ibtn_blind_stop, ibtn_blind_down;
-    private Button btn_light_control, btn_alarm, btn_mode;
+    private Button btn_light_control, btn_alarm, btn_mode,btn_back;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class ControlActivity extends AppCompatActivity {
         btn_light_control = findViewById(R.id.btn_light_control);
         btn_alarm = findViewById(R.id.btn_alarm);
         btn_mode = findViewById(R.id.btn_mode);
+        btn_back = findViewById(R.id.btn_back);
 
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("aa");
@@ -38,21 +39,21 @@ public class ControlActivity extends AppCompatActivity {
         ibtn_blind_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myRef.child("Control").child("blind_control").setValue("up");
+                myRef.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Control").child("blind_control").setValue("up");
             }
         });
 
         ibtn_blind_stop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myRef.child("Control").child("blind_control").setValue("stop");
+                myRef.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Control").child("blind_control").setValue("stop");
             }
         });
 
         ibtn_blind_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myRef.child("Control").child("blind_control").setValue("down");
+                myRef.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Control").child("blind_control").setValue("down");
             }
         });
 
@@ -76,6 +77,15 @@ public class ControlActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ControlActivity.this, ModeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ControlActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });

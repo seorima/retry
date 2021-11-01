@@ -12,6 +12,11 @@ public class UserBlind {
 
     }
 
+    public UserBlind(String blindName, String blindPlace) {
+        this.blindName = blindName;
+        this.blindPlace = blindPlace;
+    }
+
     public String getBlindName() {
         return blindName;
     }
