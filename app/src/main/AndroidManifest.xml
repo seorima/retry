@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cookandroid.aa">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -26,6 +28,18 @@
     </activity>
         <activity android:name=".AlarmActivity" />
         <activity android:name=".ModeActivity" />
+
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="false"
+            />
+
+        <service
+            android:name=".AlarmService"
+            android:enabled="true"
+            />
+
     </application>
 
 </manifest>
