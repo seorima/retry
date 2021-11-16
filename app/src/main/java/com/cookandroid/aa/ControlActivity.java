@@ -29,7 +29,7 @@ public class ControlActivity extends AppCompatActivity {
         ibtn_blind_down = findViewById(R.id.ibtn_blind_down);
         btn_light_control = findViewById(R.id.btn_light_control);
         btn_alarm = findViewById(R.id.btn_alarm);
-        btn_mode = findViewById(R.id.btn_mode);
+       // btn_mode = findViewById(R.id.btn_mode);
         btn_back = findViewById(R.id.btn_back);
 
         database = FirebaseDatabase.getInstance();
@@ -73,13 +73,7 @@ public class ControlActivity extends AppCompatActivity {
             }
         });
 
-        btn_mode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ControlActivity.this, ModeActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
 
         btn_back.setOnClickListener(new View.OnClickListener() {
