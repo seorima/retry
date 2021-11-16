@@ -15,7 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class AlarmService extends Service {
+
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = database.getReference("aa");
 
     private MediaPlayer mediaPlayer;
     private boolean isRunning;
@@ -51,6 +57,7 @@ public class AlarmService extends Service {
 
             this.isRunning = true;
 
+
             Log.d("AlarmService", "Alarm Start");
         } else if (this.isRunning & state.equals("off")){
             // 알람음 재생 ON, 알람음 중지 상태
@@ -59,6 +66,8 @@ public class AlarmService extends Service {
             this.mediaPlayer.release();
 
             this.isRunning = false;
+
+            databaseReference.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Alarm").child("Alarm_state").setValue("on");
 
             Log.d("AlarmService", "Alarm Stop");
 

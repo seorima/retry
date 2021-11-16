@@ -13,15 +13,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="시간"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="시간" />
 
         <TimePicker
             android:id="@+id/tp_set_alarm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:timePickerMode="spinner"
-            android:layout_weight="9"/>
+            android:layout_height="7dp"
+            android:layout_weight="9"
+            android:timePickerMode="spinner" />
 
     </LinearLayout>
 
@@ -43,77 +43,89 @@
             android:layout_height="wrap_content"
             android:textOn="UP"
             android:textOff="DOWN"
-            android:onClick="onToggleClicked"
             android:layout_weight="1"/>
 
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="블라인드 높이"
-            android:layout_weight="1"/>
+<!--        <Switch-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="블라인드 높이"-->
+<!--            android:layout_weight="1"/>-->
 
     </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_weight="1">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="요일 반복"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/ck_mon"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="월"/>-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/ck_tues"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="화"/>-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/ck_wed"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="수"/>-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/ck_thur"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="목"/>-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/ck_fri"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="금"/>-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/ck_sat"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="토"/>-->
+
+<!--            <CheckBox-->
+<!--                android:id="@+id/ck_sun"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="일"/>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:orientation="horizontal" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="요일 반복"/>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/btn_snooze_alarm"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/ck_mon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="월"/>
-
-            <CheckBox
-                android:id="@+id/ck_tues"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="화"/>
-
-            <CheckBox
-                android:id="@+id/ck_wed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="수"/>
-
-            <CheckBox
-                android:id="@+id/ck_thur"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="목"/>
-
-            <CheckBox
-                android:id="@+id/ck_fri"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="금"/>
-
-            <CheckBox
-                android:id="@+id/ck_sat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="토"/>
-
-            <CheckBox
-                android:id="@+id/ck_sun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="일"/>
-
-        </LinearLayout>
-
+            android:layout_height="79dp"
+            android:layout_weight="1"
+            android:text="SNOOZE" />
     </LinearLayout>
 
     <LinearLayout

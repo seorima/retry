@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Aa">
-        <activity android:name=".BlindActivity"></activity>
+        <activity android:name=".BlindActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,16 +21,14 @@
         </activity>
         <activity android:name=".RegisterActivity" />
 
-        <activity android:name=".MainActivity" >
-
-
-
-        </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".ControlActivity" />
         <activity android:name=".LightControlActivity" >
 
     </activity>
-        <activity android:name=".AlarmActivity" />
+        <activity android:name=".AlarmActivity" >
+
+        </activity>
         <activity android:name=".ModeActivity" />
 
         <receiver

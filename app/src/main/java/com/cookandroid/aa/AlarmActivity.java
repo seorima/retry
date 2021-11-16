@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -31,8 +32,8 @@ public class AlarmActivity extends AppCompatActivity {
     private PendingIntent pendingIntent;
 
     private ToggleButton tgbtn_blind_height;
-    private CheckBox ck_mon, ck_tues, ck_wed, ck_thur, ck_fri, ck_sat, ck_sun;
-    Button btn_check_alarm, btn_cancel_alarm;
+//    private CheckBox ck_mon, ck_tues, ck_wed, ck_thur, ck_fri, ck_sat, ck_sun;
+    Button btn_snooze_alarm, btn_check_alarm, btn_cancel_alarm;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,19 +43,23 @@ public class AlarmActivity extends AppCompatActivity {
         this.tp_set_alarm = findViewById(R.id.tp_set_alarm);
         tgbtn_blind_height = findViewById(R.id.tgbtn_blind_height);
 
-        ck_mon = findViewById(R.id.ck_mon);
-        ck_tues = findViewById(R.id.ck_tues);
-        ck_wed = findViewById(R.id.ck_wed);
-        ck_thur = findViewById(R.id.ck_thur);
-        ck_fri = findViewById(R.id.ck_fri);
-        ck_sat = findViewById(R.id.ck_sat);
-        ck_sun = findViewById(R.id.ck_sun);
-
+        findViewById(R.id.btn_snooze_alarm).setOnClickListener(mClickListener);
         findViewById(R.id.btn_check_alarm).setOnClickListener(mClickListener);
         findViewById(R.id.btn_cancel_alarm).setOnClickListener(mClickListener);
 
         //btn_check_alarm.setOnClickListener(mClickListener);
         //btn_cancel_alarm.setOnClickListener(mClickListener);
+
+        tgbtn_blind_height.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked){
+                    databaseReference.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Alarm").child("Alarm_height").setValue("up");
+                } else{
+                    databaseReference.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Alarm").child("Alarm_height").setValue("down");
+                }
+            }
+        });
 
 //        btn_check_alarm.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -98,7 +103,7 @@ public class AlarmActivity extends AppCompatActivity {
 
         this.pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        databaseReference.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Alarm").child("Alarm_state").setValue("on");
+        //databaseReference.child("K40TY9PhwkPGtMDRNhoor4Kg4em2").child("blind4").child("Alarm").child("Alarm_state").setValue("on");
 
 
         // 알람 설정
@@ -136,11 +141,15 @@ public class AlarmActivity extends AppCompatActivity {
                     start();
 
                     break;
-                case R.id.btn_cancel_alarm:
+                case R.id.btn_snooze_alarm:
                     // 알람 중지
                     stop();
 
                     break;
+                case R.id.btn_cancel_alarm:
+                    // 화면 나가기
+                    Intent intent = new Intent(AlarmActivity.this, ControlActivity.class);
+                    startActivity(intent);
             }
         }
     };
